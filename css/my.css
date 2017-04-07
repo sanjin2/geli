@@ -1,0 +1,72 @@
+body{
+	background-color: #F0F0F0;
+}
+.con{
+	width: 100%;
+	height: 40px;
+	background-color: #0092D8;
+	line-height: 40px;
+	/*margin-left: 50px;*/
+}
+a{
+	color: white;
+}
+.con a{
+	margin-left: 20px;
+	font-size:25px ;
+}
+
+.container{
+	max-width:400px;
+	width: 100%;
+	height: 610px;
+	position: absolute;
+	top: 10%;
+	left: 40%;
+	background-color: deepskyblue;
+	background-image:url(../img/beijin/10156958_112320104000_2.jpg) ;
+}
+.container .header .glyphicon{
+	top:0.2em;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.header{
+	
+	font-size:2em ;
+}
+
+.well{
+	margin-top: 20px;
+	margin-left:1em ;
+	margin-right:1em ;
+}
+#par{
+	margin-top:10px ;
+}
+#par p{
+	font-size: 20px ;
+	
+}
+.db{
+	width: 80%;
+	height:100px ;
+	background-color:white;
+	position: absolute;
+	bottom: 0px;
+	left:200px ;
+	border-top:1px solid gainsboro;
+	/*margin: 0px auto;*/
+}
+.db p{
+	margin-top: 15px;
+	color: #999999;
+}
+#email2 {
+	width: 150px;
+	/*height: 50px;*/
+}
+.title{
+	color:white ;
+}
+

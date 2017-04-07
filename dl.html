@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Bootstrap 101 Template</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	</head>
+	<style>
+	body{
+	background-color: #F0F0F0;
+}
+.con{
+	width: 100%;
+	height: 40px;
+	background-color: #0092D8;
+	line-height: 40px;
+	/*margin-left: 50px;*/
+}
+a{
+	color: white;
+}
+.con a{
+	margin-left: 20px;
+	font-size:25px ;
+}
+
+.container{
+	max-width:400px;
+	width: 100%;
+	height: 440px;
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	background-color: deepskyblue;
+	background-image:url(img/beijin/10156958_112320104000_2.jpg) ;
+}
+.container .header .glyphicon{
+	top:0.2em;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.header{
+	
+	font-size:2em ;
+}
+
+.well{
+	margin-top: 20px;
+	margin-left:1em ;
+	margin-right:1em ;
+}
+#par{
+	margin-top:10px ;
+}
+#par p{
+	font-size: 20px ;
+	
+}
+.db{
+	width: 80%;
+	height:100px ;
+	background-color:white;
+	position: absolute;
+	bottom: 0px;
+	left:200px ;
+	border-top:1px solid gainsboro;
+	/*margin: 0px auto;*/
+}
+.db p{
+	margin-top: 15px;
+	color: #999999;
+}
+#email2 {
+	width: 150px;
+	/*height: 50px;*/
+}
+</style>
+
+
+	<body>
+		
+		<div class="con">
+			<a>美的</a>
+		</div>
+		<div class="container ">
+			<div class="header  text-center" >
+				<!--<span class="glyphicon glyphicon-menu-left pull-left"></span>-->
+				<span class="title " style="color: white">登录</span>
+				<!--<span class="glyphicon glyphicon-list pull-right"></span>-->
+			</div>
+			<div class="well">
+				<!--用户名-->
+				<div class="form-group  has-feedback" id="user-group">
+					<label class="control-label  " for="user">用户名：</label>
+					<input type="text" class="form-control" id="user" placeholder="请输入用户名/手机号/邮箱" aria-describedby="inputSuccess2Status">
+					<span class="glyphicon  form-control-feedback " aria-hidden="true"></span>
+					<span id="user-status" class="sr-only">该用户可以注册</span>
+				</div>
+				<!--邮箱-->
+				<!--<div class="form-group  has-feedback">
+					<label class="control-label " for="email">邮箱：</label>
+					<input type="email" class="form-control" id="email" placeholder="请输入邮箱" aria-describedby="inputError2Status">
+					<span class="glyphicon  form-control-feedback " aria-hidden="true"></span>
+					<span id="email-tips" class="sr-only">(error)</span>
+				</div>-->
+
+				<!--密码-->
+				<div class="form-group  has-feedback" id="pwd-group">
+					<label class="control-label " for="pwd">密码：</label>
+					<input type="password" class="form-control" id="pwd" placeholder="请输入密码" aria-describedby="inputError2Status">
+					<span class="glyphicon  form-control-feedback " aria-hidden="true"></span>
+					<span id="pwd-status" class="sr-only">(error)</span>
+				</div>
+
+				<!--重复密码-->
+				<!--<div class="form-group  has-feedback" id="pwd2-group">
+					<label class="control-label " for="pwd2">重复密码：</label>
+					<input type="password" class="form-control" id="pwd2" placeholder="请再次输入密码" aria-describedby="inputError2Status">
+					<span class="glyphicon  form-control-feedback " aria-hidden="true"></span>
+					<span id="pwd2-status" class="sr-only">用户密码错误</span>
+				</div>-->
+
+				<!--check-->
+				<!--<div class="has-success">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" id="checkboxSuccess" value="option1"> 《我已阅读并同意》
+						</label>
+					</div>
+				</div>-->
+
+			</div>
+			<a class="btn  btn-block " style="background-color: #0092D8">登录</a>
+			<div id="par">
+				<p>使用合作账号登录</p>
+				<img src="img/qq.png"  width="45px"/>
+			<img src="img/weibo.png" width="45px" />
+			</div>
+			
+		</div>
+		
+		<div class="db">
+			<p >Copyright © 1968-2016 美的集团股份有限公司 粤ICP备09215446号</p>
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+//				if($(this).val() != ""){
+				$("#user").bind("blur",function(){
+					if($("#user").val() == ""){
+					$("#user-group").removeClass("has-success").addClass("has-error");
+					$("#user-group .form-control-feedback" ).removeClass("glyphicon-ok").addClass("glyphicon-remove");
+					$("#user-status").removeClass("sr-only").text("该用户名不能为空！");
+				}else if($("#user").val() == "niyinlong"){
+					$("#user-group").removeClass("has-success").addClass("has-error");
+					$("#user-group .form-control-feedback" ).removeClass("glyphicon-ok").addClass("glyphicon-remove");
+					$("#user-status").removeClass("sr-only").text("该用户名已经存在！");
+				}else{
+					$("#user-group").removeClass("has-error").addClass("has-success");
+					$("#user-group .form-control-feedback" ).removeClass("glyphicon-remove").addClass("glyphicon-ok");
+					$("#user-status").addClass("sr-only");
+				}
+				});
+				
+//                }else	{
+//                	
+//                }
+				
+				
+				$("#pwd").bind("blur",function(){
+					if($("#pwd").val().length < 6){
+						$("#pwd-group").removeClass("has-success").addClass("has-error");
+					$("#pwd-group .form-control-feedback" ).removeClass("glyphicon-ok").addClass("glyphicon-remove");
+					$("#pwd-status").removeClass("sr-only").text("密码长度不能小于6位！");
+					}else{
+						$("#pwd-group").removeClass("has-error").addClass("has-success");
+					$("#pwd-group .form-control-feedback" ).removeClass("glyphicon-remove").addClass("glyphicon-ok");
+					$("#pwd-status").addClass("sr-only");
+					}
+				});
+				$("#pwd2").bind("blur",function(){
+					if($("#pwd").val() == $("#pwd2").val()){
+						$("#pwd2-group").removeClass("has-error").addClass("has-success");
+					$("#pwd2-group .form-control-feedback" ).removeClass("glyphicon-remove").addClass("glyphicon-ok");
+					$("#pwd2-status").addClass("sr-only");
+						
+						
+					}else{
+						$("#pwd2-group").removeClass("has-success").addClass("has-error");
+					$("#pwd2-group .form-control-feedback" ).removeClass("glyphicon-ok").addClass("glyphicon-remove");
+					$("#pwd2-status").removeClass("sr-only").text("两次密码不一致");
+					}
+				});
+				
+					
+				
+				
+				
+			});
+		</script>
+
+	</body>
+
+</html>
